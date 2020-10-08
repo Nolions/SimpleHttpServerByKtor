@@ -12,6 +12,7 @@ ext {
             ktor_client_core_jvm      : "io.ktor:ktor-client-core-jvm:$ktor_version",
             ktor_client_apache        : "io.ktor:ktor-client-apache:$ktor_version",
             ktor_serialization        : "io.ktor:ktor-serialization:$ktor_version",
+            ktor_auth_jwt             : "io.ktor:ktor-auth-jwt:$ktor_version",
             kotlinx_serialization_json: "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_version"
     ]
 

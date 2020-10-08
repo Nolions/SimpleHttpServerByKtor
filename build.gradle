@@ -43,6 +43,7 @@ dependencies {
     implementation appDependencies.ktor_client_apache
     implementation appDependencies.ktor_serialization
     implementation appDependencies.kotlinx_serialization_json
+    implementation appDependencies.ktor_auth_jwt
 
     testImplementation testDependencies.ktor_server_tests
 
