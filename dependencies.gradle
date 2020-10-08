@@ -1,0 +1,21 @@
+ext {
+    ktor_version = "1.4.1"
+    logback_version = "1.2.3"
+    kotlinx_serialization_version = "1.0.0-RC2"
+
+    appDependencies = [
+            kotlin                    : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            logback                   : "ch.qos.logback:logback-classic:$logback_version",
+            ktor_server_core          : "io.ktor:ktor-server-core:$ktor_version",
+            ktor_server_netty         : "io.ktor:ktor-server-netty:$ktor_version",
+            ktor_client_core          : "io.ktor:ktor-client-core:$ktor_version",
+            ktor_client_core_jvm      : "io.ktor:ktor-client-core-jvm:$ktor_version",
+            ktor_client_apache        : "io.ktor:ktor-client-apache:$ktor_version",
+            ktor_serialization        : "io.ktor:ktor-serialization:$ktor_version",
+            kotlinx_serialization_json: "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_version"
+    ]
+
+    testDependencies = [
+            ktor_server_tests: "io.ktor:ktor-server-tests:$ktor_version",
+    ]
+}

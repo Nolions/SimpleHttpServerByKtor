@@ -1,0 +1,49 @@
+apply from: 'dependencies.gradle'
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+apply plugin: 'kotlinx-serialization'
+
+group 'tw.nolions.simplehttpserver'
+version '0.0.1'
+mainClassName = "io.ktor.server.netty.EngineMain"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+sourceSets {
+    main.kotlin.srcDirs = main.java.srcDirs = ['src']
+    test.kotlin.srcDirs = test.java.srcDirs = ['test']
+    main.resources.srcDirs = ['resources']
+    test.resources.srcDirs = ['testresources']
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url 'https://kotlin.bintray.com/ktor' }
+}
+
+dependencies {
+    implementation appDependencies.kotlin
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    implementation appDependencies.ktor_server_core
+    implementation appDependencies.ktor_server_netty
+
+    implementation appDependencies.ktor_client_core
+    implementation appDependencies.ktor_client_core_jvm
+    implementation appDependencies.ktor_client_apache
+    implementation appDependencies.ktor_serialization
+    implementation appDependencies.kotlinx_serialization_json
+
+    testImplementation testDependencies.ktor_server_tests
+
+}
